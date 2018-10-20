@@ -7,20 +7,28 @@
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
         tools:context=".HomePage">
-    
+    <ImageView
+            android:id="@+id/noResult"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:padding="30sp"
+            android:src="@drawable/ic_empty_result"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" tools:ignore="ContentDescription"/>
     <SearchView
-        android:id="@+id/searcher"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:iconifiedByDefault="false"
-        android:queryHint="Search..."
-        android:background="#FFF"
-        app:layout_constraintTop_toTopOf="parent"/>
-    
+            android:id="@+id/searcher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:iconifiedByDefault="false"
+            android:queryHint="Search..."
+            android:background="#FFF"
+            app:layout_constraintTop_toTopOf="parent"/>
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/searcher"/>
-
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/searcher"/>
 </android.support.constraint.ConstraintLayout>

@@ -23,7 +23,6 @@ class BindingHelper {
         @JvmStatic
         @BindingAdapter("bind:imageUrl")
         fun loadImage(imageView: ImageView, thumbnailDetails: ThumbnailDetails?){
-//            if (thumbnailDetails != null) {
             try {
                 GlideApp.with(imageView.context)
                     .load(thumbnailDetails!!.source!!)
@@ -31,11 +30,8 @@ class BindingHelper {
                     .into(imageView)
             } catch (it :Throwable){
                 Log.e("Exception","onException:\t${it.localizedMessage}")
-                imageView.setImageDrawable(imageView.resources.getDrawable(R.mipmap.ic_launcher))
+                imageView.setImageDrawable(imageView.resources.getDrawable(R.drawable.ic_place_holder))
             }
-//            } else {
-//                imageView.setImageDrawable(imageView.resources.getDrawable(R.mipmap.ic_launcher))
-//            }
         }
     }
 
